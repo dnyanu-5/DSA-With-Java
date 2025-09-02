@@ -46,12 +46,12 @@ public class bitOperations {
         return n & bitmask;
     }
     public static void main(String[] args) {
-        // System.out.println("the I th bit is "+getIthbit(10, 3));
-        // System.out.println("the I th bit is "+getIthbit(8, 2));
-        // System.out.println("setting I th bit is "+setIthbit(10, 2));
-        // System.out.println("clear I th bit is "+clearIthbit(10, 1));
-        // System.out.println("update I th bit "+updateIthbit(10, 1,1));
-        // System.out.println("update I th bit "+updateIthbit(10, 1,0));
+        System.out.println("the I th bit is "+getIthbit(10, 3));
+        System.out.println("the I th bit is "+getIthbit(8, 2));
+        System.out.println("setting I th bit is "+setIthbit(10, 2));
+        System.out.println("clear I th bit is "+clearIthbit(10, 1));
+        System.out.println("update I th bit "+updateIthbit(10, 1,1));
+        System.out.println("update I th bit "+updateIthbit(10, 1,0));
         System.out.println("clear I no. of bit "+clearIBit(15,2));
         System.out.println("clear I no. of bit "+clearIBit(10,2));
         System.out.println("clear bits in range "+ clearBitsInRange(10, 2, 4));
