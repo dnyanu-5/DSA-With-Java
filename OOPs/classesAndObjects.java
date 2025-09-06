@@ -24,7 +24,8 @@ public class classesAndObjects {
         System.out.println(p1.gettip());
 
         Students s1= new Students();
-
+        s1.name="sanika";
+        System.out.println(s1.name);
         Students s2= new Students("ram");
         System.out.println(s2.name);
         Students s3= new Students(234);
