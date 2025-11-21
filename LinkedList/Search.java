@@ -103,7 +103,6 @@ public class Search {
     }
 
     // Remove N th node from End 
-    //****** n th node from === size-n+1 node from start ********
     public void removeNthNodeFromEnd(int n){
         // calculate size 
         int size =0;
@@ -117,6 +116,7 @@ public class Search {
             head= head.next;
             return;
         }
+        //****** n th node from end === size-n+1 node from start ********
         // remove nth node , reached n-1 node 
         int i=1;
         Node prev = head;
@@ -127,8 +127,7 @@ public class Search {
         prev.next= prev.next.next;
         return;
     }
-
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 
         Search sl = new Search();
 
@@ -139,11 +138,11 @@ public class Search {
         sl.addLast(5);
         sl.printLL();
 
-        // System.out.println(sl.searchIterative(5));
-        // System.out.println(sl.searchIterative(15));
+        System.out.println(sl.searchIterative(5));
+        System.out.println(sl.searchIterative(15));
 
-        // System.out.println(sl.searchRecursive(5));
-        // System.out.println(sl.searchRecursive(15));
+        System.out.println(sl.searchRecursive(5));
+        System.out.println(sl.searchRecursive(15));
 
         sl.reverseLL();
         sl.printLL();
