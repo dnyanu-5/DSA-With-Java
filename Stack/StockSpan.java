@@ -9,7 +9,7 @@ public class StockSpan {
         span[0]=1;
         s.push(0);
 
-        for(int i=0;i<stock.length;i++){
+        for(int i=1;i<stock.length;i++){
             int currPrice=stock[i];
             while (!s.isEmpty() && currPrice > stock[s.peek()]) {
                 s.pop();
