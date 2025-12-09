@@ -1,5 +1,3 @@
-package Greedy_Algorithm;
-
 import java.util.Arrays;
 
 public class MinAbsDifference {
