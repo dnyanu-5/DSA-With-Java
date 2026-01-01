@@ -69,16 +69,104 @@ public class HeapBasics {
         }
     }
 
-    public static void main(String[] args) {
-        Heap h = new Heap();
-        h.add(2);
-        h.add(5);
-        h.add(0);
-        h.add(8);
+    public static void heapify2(int arr[], int i, int size) {
+        int max = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
 
-        while (!h.isEmpty()) {
-            System.out.println(h.peek());
-            h.remove();
+        if (left < size && arr[left] > arr[max]) {
+            max = left;
         }
+
+        if (right < size && arr[right] > arr[max]) {
+            max = right;
+        }
+        if (max != i) {
+            int temp = arr[i];
+            arr[i] = arr[max];
+            arr[max] = temp;
+
+            heapify2(arr, max, size);
+        }
+    }
+
+    public static void heapSortAsc(int arr[]) {
+        int n = arr.length;
+        for (int i = n / 2; i >= 0; i--) {
+            heapify2(arr, i, n);
+        }
+        // swap
+
+        for (int i = n - 1; i > 0; i--) {
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+
+            heapify2(arr, 0, i);
+        }
+
+    }
+
+    public static void heapSortDesc(int arr[]) {
+        int n = arr.length;
+        for (int i = n / 2; i >= 0; i--) {
+            heapifyMin(arr, i, n);
+        }
+
+        for (int i = n - 1; i > 0; i--) {
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+
+            heapifyMin(arr, 0, i);
+        }
+    }
+
+    public static void heapifyMin(int arr[], int i, int n) {
+        int min = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+
+        if (left < n && arr[left] < arr[min]) {
+            min = left;
+        }
+        if (right < n && arr[right] < arr[min]) {
+            min = right;
+        }
+
+        if (min != i) {
+            int temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
+
+            heapifyMin(arr, min, n);
+        }
+    }
+
+    public static void printArr(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Heap h = new Heap();
+        // h.add(2);
+        // h.add(5);
+        // h.add(0);
+        // h.add(8);
+
+        // while (!h.isEmpty()) {
+        // System.out.println(h.peek());
+        // h.remove();
+        // }
+
+        int arr[] = { 1, 4, 2, 5, 3, 7, 4, 9 };
+        // heapSortAsc(arr);
+        // printArr(arr);
+        heapSortDesc(arr);
+        printArr(arr);
+
     }
 }
