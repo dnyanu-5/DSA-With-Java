@@ -34,25 +34,52 @@ public class hashExamples {
         }
         for (int i = 0; i < t.length(); i++) {
             char ch = t.charAt(i);
-            if (map.get(ch) != null) {    // value exists
+            if (map.get(ch) != null) { // value exists
                 if (map.get(ch) == 1) {
                     map.remove(ch);
                 } else {
                     map.put(ch, map.get(ch) - 1);
                 }
-            }else{
+            } else {
                 return false;
             }
         }
         return map.isEmpty();
-    }    
-    public static void main(String[] args) {
-        int nums[] = { 2, 2, 1, 1, 1, 2, 2, 2 };
-        System.out.println(majorityEle(nums));
+    }
 
-        String s = "tulip";
-        String t = "liqid";
-        System.out.println(anagramPharse(s, t));
+    public static String sortCharacters(String str) {
+
+    // 1. Count frequency
+    HashMap<Character, Integer> map = new HashMap<>();
+    for (int i = 0; i < str.length(); i++) {
+        char curr = str.charAt(i);
+        map.put(curr, map.getOrDefault(curr, 0) + 1);
+    }
+    // 2. Store characters in list
+    List<Character> al = new ArrayList<>(map.keySet());
+    al.sort((a, b) -> map.get(b) - map.get(a));
+
+    // Build result
+    StringBuilder sb = new StringBuilder();
+    for (char c : al) {
+        int freq = map.get(c);
+        for (int j = 0; j < freq; j++) {
+            sb.append(c);
+        }
+    }
+
+    return sb.toString();
+}
+    public static void main(String[] args) {
+        // int nums[] = { 2, 2, 1, 1, 1, 2, 2, 2 };
+        // System.out.println(majorityEle(nums));
+
+        // String s = "tulip";
+        // String t = "liqid";
+        // System.out.println(anagramPharse(s, t));
+
+        String s1 = "tree";
+        System.out.println(sortCharacters(s1));
 
     }
 
