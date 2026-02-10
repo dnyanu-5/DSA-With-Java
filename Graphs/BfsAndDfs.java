@@ -2,7 +2,7 @@ package Graphs;
 
 import java.util.*;
 
-public class BFS {
+public class BfsAndDfs {
     static class Edge {
         int src;
         int dest;
@@ -44,7 +44,7 @@ public class BFS {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-    static void breadthFirstsearch(ArrayList<Edge>[] graph) {  //o(V+E) 
+    static void breadthFirstsearch(ArrayList<Edge>[] graph) { // o(V+E)
         Queue<Integer> q = new LinkedList<>();
         boolean visited[] = new boolean[graph.length];
 
@@ -62,12 +62,42 @@ public class BFS {
         }
     }
 
+    static void DFS(ArrayList<Edge>[] graph, int cur, boolean visited[]) {
+        System.out.print(cur + " ");
+        visited[cur] = true;
+
+        for (int i = 0; i < graph[cur].size(); i++) {
+            Edge e = graph[cur].get(i);
+            if (!visited[e.dest]) {
+                DFS(graph, e.dest, visited);
+            }
+        }
+    }
+
+    static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean visited[]) {
+
+        if (src == dest) {
+            return true;
+        }
+        visited[src] = true;
+        for (int i = 0; i < graph[src].size(); i++) {
+            Edge e = graph[src].get(i);
+            if (!visited[e.dest] && hasPath(graph, e.dest, dest, visited)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public static void main(String[] args) {
         int V = 7;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge>[] graph = new ArrayList[V];
         createGraph(graph);
         breadthFirstsearch(graph);
-
+        System.out.println();
+        DFS(graph, 0, new boolean[V]);
+        System.out.println();
+        boolean hasPath = hasPath(graph, 0, 5, new boolean[V]);
+        System.out.println(hasPath);
     }
-
 }
