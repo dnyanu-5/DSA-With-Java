@@ -23,7 +23,6 @@ public class kadanesAlgoritham {
         }
        
     }
-
     public static void main(String[] args) {
         int arr[] = { -2, 11, 4, -3 };
         kadanesSum(arr);

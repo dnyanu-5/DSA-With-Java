@@ -39,6 +39,22 @@ public class subArray{
         System.out.println("Maximum subarray sum: " + maxSum);
         System.out.println("Total subarrays: " + totalArr);
     }
+
+    // subarray sum equals to k 
+//  
+//     public int subarraySum(int[] nums, int k) {
+//         int count=0;
+//         for(int i=0;i<nums.length;i++){
+//             int sum=0;
+//             for(int j=i;j<nums.length;j++){
+//                 sum+=nums[j];
+//                 if(sum==k){
+//                     count++;
+//                 }
+//             }
+//         }
+//         return count;
+//     }
     public static void main(String[] args) {
         int arr[] = { 1,-2,6,-1,3};
         pairsInArray(arr);
