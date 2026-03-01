@@ -13,7 +13,6 @@ public class NextGreater {
             while (!s.isEmpty() && arr[s.peek()] <= arr[i]) {
                 s.pop();
             }
-
             if (s.isEmpty()) {
                 nextG[i] = -1;
             } else {

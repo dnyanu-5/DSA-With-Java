@@ -12,7 +12,7 @@ public class SlidingWindow {
             while (!dq.isEmpty() && arr[i] >= arr[dq.peekLast()]) {
                 dq.removeLast();
             }
-            dq.addLast(i);
+            dq.addLast(i);           //1, 2, 3, 1, 4, 5, 2, 3, 6
         }
         // Print maximum of first window
         System.out.print(arr[dq.peek()] + " ");

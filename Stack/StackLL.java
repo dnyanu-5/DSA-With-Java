@@ -57,9 +57,6 @@ public class StackLL {
         while (!Stack.isEmpty()) {
             System.out.println(Stack.peek());
             Stack.pop();
-        }
-        
-
+        } 
     }
-
 }

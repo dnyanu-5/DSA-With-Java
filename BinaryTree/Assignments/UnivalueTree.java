@@ -1,7 +1,5 @@
 package BinaryTree.Assignments;
 
-import javax.swing.tree.TreeNode;
-
 public class UnivalueTree {
     static class node {
         int data;
