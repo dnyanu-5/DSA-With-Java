@@ -25,7 +25,6 @@ public class RatInMaze {
         path[row][col] = 0; // unmark path for backtracking
 
     }
-
        public static void printMatrix(int path[][], int n) {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
@@ -35,12 +34,11 @@ public class RatInMaze {
         }
         System.out.println();
     }
-    
     public static void main(String[] args) {
         int maze[][] = { 
                 { 1, 0, 0, 0 },
                 { 1, 1, 0, 1 },
-                { 0, 1, 0, 0 },
+                { 1, 1, 0, 0 },
                 { 0, 1, 1, 1 }, };
 
         int path[][] = new int[4][4];

@@ -1,4 +1,4 @@
-package Bst;
+package Divide_Conquer.Bst;
 
 import java.util.*;
 
