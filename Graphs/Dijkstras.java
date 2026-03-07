@@ -86,7 +86,6 @@ public class Dijkstras {
         graph[4].add(new Edge(4, 5, 5));
         graph[4].add(new Edge(4, 3, 2));
     }
-
     public static void main(String[] args) {
         int V = 6;
         @SuppressWarnings("unchecked")
