@@ -1,7 +1,5 @@
 package TwoDArrays;
-
 public class count7 {
-
     public static void numberOf7(int arr[][]) {
 
         int count = 0;
@@ -15,14 +13,10 @@ public class count7 {
             }
         }
         System.out.println("the count of 7 is:" + count);
-
     }
-
     public static void main(String[] args) {
 
         int arr[][] = { { 1, 2, 7 }, { 2, 7, 8 } };
         numberOf7(arr);
-
     }
-
 }
