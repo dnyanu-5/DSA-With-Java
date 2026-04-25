@@ -40,7 +40,7 @@ public class Knapsack01 {
         int n = val.length;
         int dp[][] = new int[n + 1][W + 1];
         for (int i = 0; i < dp.length; i++) {
-            dp[i][0] = 0; // 0 th ccol
+            dp[i][0] = 0; // 0 th col
         }
         for (int j = 0; j < dp[0].length; j++) {
             dp[0][j] = 0; // 0th row

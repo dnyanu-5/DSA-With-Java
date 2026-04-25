@@ -19,7 +19,7 @@ public class ClimbingStairs {
         if (n < 0) {
             return 0;
         }
-        if (dp[n] != -0) {
+        if (dp[n] != 0) {
             return dp[n]; // already calculate the ways for n
         }
         dp[n] = findWaysUsingDp(n - 1, dp) + findWaysUsingDp(n - 2, dp);
@@ -44,8 +44,11 @@ public class ClimbingStairs {
         System.out.println(findWays(n));
         int dp[] = new int[n + 1];
         System.out.println(findWaysUsingDp(n, dp));
-        //using tabulation
+        // using tabulation
         System.out.println(findWaysUsingTabulation(n));
+
+        // q2 -> can take either 1 or 2 or 3
+        // noOfWays(n)=findWays(n - 1) + findWays(n - 2) + findWays(n - 3) ;
 
     }
 
