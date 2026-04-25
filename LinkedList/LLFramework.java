@@ -11,8 +11,7 @@ public class LLFramework {
         ll.removeFirst();
         ll.removeLast();
         System.out.println(ll);
-
-        
+    
     }
     
 }
