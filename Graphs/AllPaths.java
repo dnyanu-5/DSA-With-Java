@@ -30,7 +30,7 @@ public class AllPaths {
     }
     public static void AllPathFromStoD(ArrayList<Edge> graph[],int src,int des, String path){
         if(src==des){
-            System.err.println(path+des);
+            System.out.println(path+des);
             return;
         }
 
