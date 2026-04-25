@@ -1,5 +1,5 @@
 package Strings;
-
+import java.util.*;
 public class StringBuilderDemo {
 
     public static String toUpperCase(String str) {
@@ -44,6 +44,8 @@ public class StringBuilderDemo {
         }
         System.out.println(sb);
 
+        int arr[]= new int[3];
+        Arrays.fill(arr,99);
         String str2 = "hi, i am a student";
         System.out.println(toUpperCase(str2));
 

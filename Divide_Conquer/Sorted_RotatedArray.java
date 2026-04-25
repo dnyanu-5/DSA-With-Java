@@ -24,7 +24,7 @@ public class Sorted_RotatedArray {
             if (arr[mid] <= target && target <= arr[ei]) {
                 return solution(arr, mid+1, ei, target);
             } else {
-                return solution(arr,si + 1, mid-1, target);
+                return solution(arr,si, mid-1, target);
             }
         }
     }
